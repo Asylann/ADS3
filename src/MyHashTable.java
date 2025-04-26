@@ -1,6 +1,6 @@
 public class MyHashTable<K,V> {
 
-    private class HashNode<K,V> {
+    public class HashNode<K,V> {
         private K key;
         private V value;
         private HashNode<K,V> next;
@@ -8,6 +8,10 @@ public class MyHashTable<K,V> {
         public HashNode(K key, V value){
             this.key = key;
             this.value = value;
+        }
+
+        public HashNode<K, V> getNext() {
+            return next;
         }
 
         @Override
@@ -43,7 +47,11 @@ public class MyHashTable<K,V> {
         return hashValue % M;
     }
 
-    public void put(K key,V value){
+    public HashNode<K,V>[] getChainArray() {
+        return chainArray;
+    }
+
+    public void put(K key, V value){
         int index = hash(key);
         HashNode<K,V> head = chainArray[index];
         while(head!=null){
