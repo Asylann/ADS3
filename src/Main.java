@@ -22,8 +22,27 @@ public class Main {
         }
 
         for(int i = 0;i<100;i++){
-            System.out.printf("arr[%d] = %d elements",i,arr[i]);
-            System.out.println();
+            /*System.out.printf("arr[%d] = %d elements",i,arr[i]);
+            System.out.println();*/
+        }
+
+        BST<Integer,String> BinaryTree = new BST<>();
+        BinaryTree.put(5, "ads");
+        BinaryTree.put(3, "123");
+        BinaryTree.put(7, "$3n");
+        BinaryTree.put(2, "70f");
+        BinaryTree.put(4, "poe");
+        BinaryTree.put(6, "67k");
+        BinaryTree.put(8, "even");
+        BinaryTree.put(9,"44&");
+        BinaryTree.put(1,"34F");
+
+        BinaryTree.delete(7);
+        BinaryTree.delete(9);
+
+        System.out.println("Sorted Keys (in-order!)");
+        for (var elem : BinaryTree) {
+            System.out.println("key is " + elem.getKey() + " and value is " + elem.getValue());
         }
     }
 }
